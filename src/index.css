@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #0a0a0f;
+  color: #f8f9fa;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #c1440e, #e07035);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #e07035, #c1440e);
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-mars-orange via-mars-red to-mars-orange bg-clip-text text-transparent;
+  }
+  
+  .btn-primary {
+    @apply px-8 py-4 bg-gradient-to-r from-mars-red to-mars-orange rounded-full font-space font-semibold 
+           text-white shadow-lg shadow-mars-red/30 hover:shadow-mars-orange/50 
+           transition-all duration-300 hover:scale-105 active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 border-2 border-mars-orange/50 rounded-full font-space font-medium 
+           text-mars-orange hover:bg-mars-orange/10 transition-all duration-300;
+  }
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+}
